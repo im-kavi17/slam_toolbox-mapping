@@ -1,0 +1,139 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+  - Class: rviz_common/Views
+    Name: Views
+  - Class: rviz_common/Selection
+    Name: Selection
+
+Visualization Manager:
+  Class: ""
+
+  Displays:
+
+    - Class: rviz_default_plugins/Grid
+      Name: Grid
+      Enabled: true
+      Reference Frame: base_link
+      Plane: XY
+      Cell Size: 1
+      Plane Cell Count: 10
+      Line Style:
+        Line Width: 0.03
+        Value: Lines
+
+    - Class: rviz_default_plugins/Map
+      Name: Map
+      Enabled: true
+      Topic: /map
+      Alpha: 0.7
+      Color Scheme: map
+      Draw Behind: false
+      Unreliable: false
+
+    - Class: rviz_default_plugins/LaserScan
+      Name: RPLIDAR
+      Enabled: true
+      Topic: /scan
+      Size (m): 0.03
+      Style: Points
+      Color: 255; 255; 0
+      Decay Time: 0
+      Position Transformer: XYZ
+      Selectable: true
+      Use Fixed Frame: true
+
+    - Class: rviz_default_plugins/TF
+      Name: TF
+      Enabled: true
+      Frame Timeout: 15
+      Marker Scale: 0.5
+      Show Axes: true
+      Show Names: true
+      Update Interval: 0
+
+    - Class: rviz_default_plugins/RobotModel
+      Name: Robot Model
+      Enabled: true
+      Description Source: Topic
+      Description Topic: /robot_description
+      Visual Enabled: true
+      Collision Enabled: false
+      Alpha: 1
+      Update Interval: 0
+
+    - Class: nav2_rviz_plugins/Costmap
+      Name: Global Costmap
+      Enabled: true
+      Topic: /global_costmap/costmap
+      Alpha: 0.5
+      Draw Behind: false
+      Unreliable: false
+
+    - Class: nav2_rviz_plugins/Costmap
+      Name: Local Costmap
+      Enabled: true
+      Topic: /local_costmap/costmap
+      Alpha: 0.7
+      Draw Behind: false
+      Unreliable: false
+
+    - Class: nav2_rviz_plugins/Path
+      Name: Global Path
+      Enabled: true
+      Topic: /plan
+      Color: 0; 255; 0
+      Line Style: Lines
+      Line Width: 0.05
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0.02
+
+    - Class: rviz_default_plugins/Pose
+      Name: AMCL Pose
+      Enabled: true
+      Topic: /amcl_pose
+      Shape: Arrow
+      Color: 255; 25; 0
+      Shaft Length: 0.5
+      Shaft Radius: 0.05
+      Head Length: 0.15
+      Head Radius: 0.08
+
+    - Class: rviz_default_plugins/MarkerArray
+      Name: Navigation Markers
+      Enabled: true
+      Topic: /waypoint_markers
+
+  Global Options:
+    Background Color: 48; 48; 48
+    Fixed Frame: map
+    Frame Rate: 30
+
+  Tools:
+    - Class: rviz_default_plugins/Interact
+    - Class: rviz_default_plugins/MoveCamera
+    - Class: rviz_default_plugins/Select
+    - Class: rviz_default_plugins/FocusCamera
+    - Class: rviz_default_plugins/Measure
+    - Class: rviz_default_plugins/SetInitialPose
+    - Class: rviz_default_plugins/SetGoal
+
+  Views:
+    Current:
+      Class: rviz_default_plugins/TopDownOrtho
+      Name: Top Down
+      Angle: 0
+      Scale: 15
+      X: 0
+      Y: 0
+      Near Clip Distance: 0.01
+      Far Clip Distance: 100
+      Target Frame: map
+
+Window Geometry:
+  Height: 900
+  Width: 1400
+  X: 50
+  Y: 50
